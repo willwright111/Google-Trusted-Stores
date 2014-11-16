@@ -65,9 +65,6 @@ class Mage_GoogleTrustedStore_Block_OrderConfirmation_Onepage extends Mage_Core_
         if (!$this->_order) {
             $orderId = Mage::getSingleton('checkout/session')->getLastOrderId();
             $order = Mage::getModel('sales/order')->load($orderId);
-            if (!$order->getId()) {
-                throw new RuntimeException('Unable to load last order.');
-            }
             $this->_order = $order;
         }
 
